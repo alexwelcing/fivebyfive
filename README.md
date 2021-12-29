@@ -10,3 +10,5 @@ Assemble page index and search results during build, also leverage search APIs t
 ## Interactives
 Embed approved javascript applications to demonstrate advanced content. Page type allows optimal viewing and interaction across devices.
 
+## Permissions
+Allow discrete editorial team management so publishers can publish, writers can write and marketers can market.
