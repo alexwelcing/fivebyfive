@@ -1,0 +1,95 @@
+{{#get "posts" include="tags"  filter="tags:[travel]" limit="3" as |Post_Grid|}}
+{{#if Post_Grid}}
+<div class="mnmd-block mnmd-block--fullwidth mnmd-post-grid-b">
+    <div class="container">
+        <div class="block__inner post-grid-b__inner">
+            <div class="block-heading">
+                <h4 class="block-heading__title">{{t "TRAVEL NEWS"}}</h4>
+                <p class="sub-heading__title">{{t "Sed do eiusmod tempor"}}</p>
+            </div>
+            <div class="block__wrap post-grid-b__wrap">
+                <div class="row">
+                    {{#foreach  Post_Grid}}
+                    {{#has number = "1"}}
+                    <div class="col-md-4 col-sm-6 post-grid-b__item">
+                        <article class="post--overlay post--overlay-bottom post--overlay-floorfade post-santoni">
+                            {{#if feature_image}}
+                            <div class="background-img" style="background-image: url({{img_url feature_image size="m"}});"></div>
+                            {{/if}}
+                            <div class="post__text inverse-text">
+                                <div class="post__text-wrap">
+                                    <div class="post__text-inner">
+                                        {{#primary_tag}}
+                                        <a class="post__cat cat-theme" href="{{url}}">{{name}}</a>
+                                        {{/primary_tag}}
+                                        <h3 class="post__title">{{title}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="{{url}}" class="link-overlay"></a>
+                        </article>
+                    </div>
+                    {{/has}}
+                    {{#has number = "2"}}
+                    <div class="col-md-8 col-sm-6 post-grid-b__item">
+                        <article class="post--overlay post--overlay-bottom post--overlay-floorfade post-santoni">
+                            {{#if feature_image}}
+                            <div class="background-img" style="background-image: url({{img_url feature_image size="m"}});"></div>
+                            {{/if}}
+                            <div class="post__text inverse-text">
+                                <div class="post__text-wrap">
+                                    <div class="post__text-inner">
+                                        {{#primary_tag}}
+                                        <a class="post__cat cat-theme" href="{{url}}">{{name}}</a>
+                                        {{/primary_tag}}
+                                        <h3 class="post__title">{{title}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="{{url}}" class="link-overlay"></a>
+                        </article>
+                    </div>
+                    {{/has}}
+                    {{#has number = "3"}}
+                    <div class="col-md-12 col-sm-12 post-grid-b__item">
+                        <article class="post--overlay post--overlay-bottom post--overlay-floorfade post-santoni">
+                            {{#if feature_image}}
+                            <div class="background-img" style="background-image: url({{img_url feature_image size="xl"}});"></div>
+                            {{/if}}
+                            <div class="post__text inverse-text">
+                                <div class="post__text-wrap">
+                                    <div class="post__text-inner">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                {{#primary_tag}}
+                                                <a class="post__cat cat-theme" href="{{url}}">{{name}}</a>
+                                                {{/primary_tag}}
+                                                <h3 class="post__title">{{title}}</h3>
+                                                <div class="post__meta">
+                                                    <time class="time published" datetime="{{date published_at}}" title="{{date published_at}}">{{date published_at}}</time>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="post__excerpt hidden-xs hidden-sm inverse-text">
+                                                    {{excerpt words="20"}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="{{url}}" class="link-overlay"></a>
+                        </article>
+                    </div>
+                    {{/has}}
+                    {{/foreach}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
+{{/get}}

@@ -1,0 +1,54 @@
+<div class="mnmd-widget widget widget-about-me">
+    <div class="widget__inner about-me__inner">
+        <div class="about-img">
+            <div class="background-img" style="background-image: url({{asset "images/img_22.png"}});"></div>
+        </div>
+        <div class="widget__wrap about-me__wrap">
+            <div class="about-content text-center">
+                {{#get 'authors' limit="1"}}
+            {{#foreach authors}}
+                {{#if profile_image}}
+                    <div class="author__avatar">
+                        <a rel="author" title="author" href="{{url}}">
+                            <img src="{{profile_image}}" />
+                        </a>
+                    </div>
+                  {{/if}}
+
+                <div class="about__text">
+                    <a class="author__name" rel="author" title="author" href="{{url}}">{{name}}</a>
+                    <div class="about__bio">
+                        {{bio}}
+                    </div>
+                    <ul class="social-list social-list--sm list-horizontal">
+                        {{#if facebook}}
+                            <li>
+                                <a href="https://www.facebook.com/{{facebook}}" target="_blank" rel="noopener noreferrer">
+                                    {{> icons/facebook}}
+                                </a>
+                            </li>
+                        {{/if}}
+                        {{#if twitter}}
+                            <li>
+                                <a href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener noreferrer">
+                                    {{> icons/twitter}}
+                                </a>
+                            </li>
+                        {{/if}}
+                        {{#if location}}
+                        <li><a href="{{location}}" target="_blank">{{> icons/address}}</a>
+                        </li>
+                        {{/if}}
+
+                        {{#if website}}
+                        <li><a href="{{website}}" target="_blank">{{> icons/website}}</a>
+                        </li>
+                        {{/if}}
+                    </ul>
+                </div>
+                {{/foreach}}
+        {{/get }}
+            </div>
+        </div>
+    </div>
+</div>

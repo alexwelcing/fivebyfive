@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    <link rel="stylesheet" href="{{asset "css/screen.css"}}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}}{{{block "body_class"}}}">
+    <div class="site-wrapper">
+        {{> header}}
+        <div class="site-content">
+            {{{body}}}
+        </div>
+
+        {{> footer}}
+    </div><!-- .site-wrapper -->
+    
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="{{asset "js/vendors/infinite-scroll.pkgd.min.js"}}"></script>
+    <script src="{{asset "js/vendors/throttle-debounce.min.js"}}"></script>
+    <script src="{{asset "js/vendors/bootstrap.min.js"}}"></script>
+    <script src="{{asset "js/vendors/flickity.min.js"}}"></script>
+    <script src="{{asset "js/vendors/owl-carousel.min.js"}}"></script>
+    <script src="{{asset "js/vendors/theiaStickySidebar.min.js"}}"></script>
+    <script src="{{asset "js/vendors/fitvids.js"}}"></script>
+    <script src="{{asset "js/atbs-scripts.js"}}"></script>
+
+    {{ghost_foot}}
+</body>
+
+</html>

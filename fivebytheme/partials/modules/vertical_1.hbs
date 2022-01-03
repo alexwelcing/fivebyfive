@@ -1,0 +1,26 @@
+<article class="post post--vertical">
+    <div class="post__text post__text--top">
+        {{#primary_tag}}
+            <a class="post__cat post--color" href="{{url}}">{{name}}</a>
+        {{/primary_tag}}
+        <div class="post__title typescale-1">
+            <a href="{{url}}">{{title}}</a>
+        </div>
+    </div>
+    {{#if feature_image}}
+    <div class="post__thumb m-b-xs">
+        <div class="background-img" style="background-image: url({{img_url feature_image size="s"}});"></div>
+        <a href="{{url}}" class="link-overlay"></a>
+    </div>
+    {{/if}}
+    <div class="post__meta flexbox">
+        {{#primary_author}}
+        <span class="entry-author flexbox__item"> <a href="{{url}}" class="entry-author__name">{{t "By"}} {{name}}</a></span>
+        {{/primary_author}}
+        <div class="post__readmore m-b-0">
+            <a href="{{url}}" class="button__readmore">
+                <span class="readmore__text post--color">{{t "READ MORE"}} <i class="mdicon mdicon-chevron-thin-right"></i></span>
+            </a>
+        </div>
+    </div>
+</article>

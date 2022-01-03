@@ -1,0 +1,51 @@
+{{#get "posts" limit="4"  include="tags,authors" filter="tags:[{{post.tags}}]+id:-{{post.id}}" as |related|}}
+    {{#if related}}
+    <div class="mnmd-block mnmd-post-list">
+        <div class="block__inner post-list__inner">
+            <div class="block-heading">
+                <h4 class="block-heading__title">{{t "RELATED NEWS"}}</h4>
+            </div>
+        </div>
+        <div class="block__wrap post-list__wrap">
+            <div class="row posts-list list-space-xxl">
+                {{#foreach related}}
+                <div class="list-item col-xs-6 small-post-vertrical">
+                    <article class="post post--vertical post-santoni height-md">
+                        {{#if feature_image}}
+                        <div class="post__thumb">
+                            <div class="background-img" style="background-image: url({{img_url feature_image size="m"}});"></div>
+                            <a class="link-overlay" href="{{url}}"></a>
+                        </div>
+                        {{/if}}
+                        <div class="post__text">
+                            <!--  post-text-middle    -->
+                            {{#primary_tag}}
+                            <a class="post__cat" href="{{url}}">{{name}}</a>
+                            {{/primary_tag}}
+                            <h3 class="post__title">
+                                <a href="{{url}}">{{title}}</a>
+                            </h3>
+                            <div class="post__excerpt">
+                                {{excerpt words="15"}}
+                            </div>
+                            <div class="post-meta-more clearfix">
+                                <div class="post__meta post__meta-bottom">
+                                    {{#primary_author}} 
+                                    <span class="entry-author">{{t "By"}} <a href="{{url}}" class="entry-author__name">{{name}}</a></span>
+                                    {{/primary_author}}
+                                    <time class="time published" datetime="{{date published_at}}" title="{{date published_at}}">{{date published_at}}</time>
+                                </div>
+                                <div class="post__readmore clearfix">
+                                    <a href="{{url}}" class="button__readmore"><i class="mdicon mdicon-arrow_forward"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                {{/foreach}}
+            </div>
+            <!-- end posts-list -->
+        </div>
+    </div>
+    {{/if}}
+{{/get}}

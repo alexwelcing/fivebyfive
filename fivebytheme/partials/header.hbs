@@ -1,0 +1,76 @@
+<header class="site-header">
+    <!-- version-white-->
+    <!-- Mobile header -->
+    <div class="container">
+        <div class="row">
+            <div id="mnmd-mobile-header" class="mobile-header visible-xs visible-sm">
+                <div class="mobile-header__inner mobile-header__inner--flex">
+                    <div class="header-branding header-branding--mobile mobile-header__section text-left">
+                        <div class="header-logo header-logo--mobile flexbox__item text-left">
+                            <a href="{{@site.url}}">
+                                {{#if @site.logo}}
+                                    <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
+                                {{else}}
+                                    <span class="logo-text">{{@site.title}}</span>
+                                {{/if}}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mobile-header__section text-right">
+                        <a href="#mnmd-offcanvas-primary" class="offcanvas-menu-toggle mobile-header-btn js-mnmd-offcanvas-toggle">
+                            <i class="mdicon mdicon-menu mdicon--last hidden-xs"></i><i class="mdicon mdicon-menu visible-xs-inline-block"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile header -->
+            <!-- Navigation bar -->
+            <nav class="navigation-bar navigation-bar--fullwidth hidden-xs hidden-sm js-sticky-header-holder">
+                <div class="navigation-bar__inner">
+                    <div class="header-branding navigation-bar__section">
+                        <div class="site-logo header-logo text-left">
+                            <a href="{{@site.url}}">
+                                {{#if @site.logo}}
+                                    <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
+                                {{else}}
+                                    <span class="logo-text">{{@site.title}}</span>
+                                {{/if}}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="navigation-wrapper navigation-bar__section js-priority-nav text-center">
+                        {{#if @site.navigation}}
+                            {{navigation}}
+                        {{/if}}
+                    </div>
+                </div>
+            </nav>
+            <!-- Navigation bar -->
+        </div>
+    </div>
+    <div class="mnmd-block mnmd-block--fullwidth mnmd-news-ticker mnmd-block--contiguous mnmd-news-ticker--fw">
+        <div class="container">
+            <div class="mnmd-news-ticker__inner">
+                <div class="mnmd-news-ticker__heading hidden-xs"><span>{{t "Do not miss"}}</span></div>
+                <div class="mnmd-news-ticker__content js-mnmd-news-ticker">
+                    <ul class="list-slider-head">
+                        {{#get "posts" limit="5"}}
+                        {{#foreach posts}}
+                        <li >
+                            <article class="post">
+                                <h3 class="post__title"><a href="{{url}}">{{title}}</a></h3>
+                            </article>
+                        </li>
+                        {{/foreach}}
+                        {{/get}}
+                    </ul>
+                </div>
+                <!-- End .mnmd-news-ticker__content -->
+                <div class="mnmd-news-ticker__control">
+                    <button class="mnmd-news-ticker__prev"><i class="mdicon mdicon-expand_less"></i></button><button class="mnmd-news-ticker__next"><i class="mdicon mdicon-expand_more"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- End Container -->
+    </div>
+</header>

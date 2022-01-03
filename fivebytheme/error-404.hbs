@@ -1,0 +1,29 @@
+{{!< default}}
+
+{{!--
+
+There are two error files in this theme, one for 404s and one for all other errors.
+This file is the former, and handles all 404 Page Not Found errors.
+
+The 404 error is the most common error that a visitor might see, for example when
+following a broken link
+
+Keep this template as lightweight as you can!
+
+--}}
+
+<div class="mnmd-404-block mnmd-block mnmd-404-block--fullwidth ">
+    <div class="container container--narrow">
+        <div class="error-page text-center">
+        <div class="error-page-top">
+            <h1>404</h1>
+            <div class="error-text">
+                <h3 class="error-sub-title"> {{t "Page Not Found"}}  </h3>
+                <p class="error-notice ">{{t "We are Sorry But We Can't Find The Page You Are Looking For."}} <span class="post__readmore"><a href="{{@site.url}}" class="button__readmore">{{t "go back home"}}</a></span></p>
+            </div>
+            
+        </div>
+      
+      </div>
+    </div>
+</div>

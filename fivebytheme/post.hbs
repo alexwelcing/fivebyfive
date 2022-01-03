@@ -1,0 +1,32 @@
+{{!< default}}
+<div class="single">
+    <div class="mnmd-block mnmd-block--fullwidth" style="transform: none;">
+    <div class="container">
+        <div class="row">
+            <div class="mnmd-main-col" role="main">
+                <div class="mnmd-block post post-single">
+                    <div class="post-single__inner">
+                        {{#post}}
+                            {{> content}}
+                            <div class="navigation-author__wrap clearfix">
+                            {{> single-sections/author_box}}
+                            {{> single-sections/navigation_articles}}
+                            </div>
+                        {{/post}}
+
+                        {{#is "post"}}
+                            {{> single-sections/related_articles}}
+                        {{/is}}
+                    </div>
+                </div>
+            </div>
+            <!-- .mnmd-main-col -->
+
+            <div class="mnmd-sub-col sidebar js-sticky-sidebar" role="complementary">
+                {{> sidebar }}
+            </div>
+            <!-- .mnmd-sub-col -->
+        </div>
+    </div>
+</div></div>
+{{#contentFor "body_class"}}{{#if @site.logo}}{{#if @site.cover_image}} with-alt-header{{/if}}{{/if}}{{/contentFor}}

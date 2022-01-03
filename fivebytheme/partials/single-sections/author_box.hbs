@@ -1,0 +1,38 @@
+{{#primary_author}}
+
+
+    <div class="author-box">
+        {{#if profile_image}}
+          <div class="author-avatar">
+             <img src="{{profile_image}}" class="avatar photo">
+          </div>
+        {{/if}}
+        <div class="author-box__text">
+            <div class="author-name">
+                <a href="{{url}}">{{name}}</a>
+            </div>
+
+            <div class="author-bio">
+                {{bio}}
+            </div>
+            <ul class="author-social social-list social-list--xs list-horizontal">
+                {{#if twitter}}
+                    <li>
+                        <a href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener noreferrer">
+                            {{> icons/twitter}}
+                        </a>
+                    </li>
+                {{/if}}
+                {{#if location}}
+                <li><a href="{{location}}" target="_blank">{{> icons/address}}</a>
+                </li>
+                {{/if}}
+
+                {{#if website}}
+                <li><a href="{{website}}" target="_blank">{{> icons/website}}</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+{{/primary_author}}

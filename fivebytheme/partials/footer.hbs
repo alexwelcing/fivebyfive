@@ -1,0 +1,56 @@
+<footer class="site-footer site-footer--white site-footer site-footer__section site-footer__section--flex site-footer--inverse inverse-text site-footer--white">
+    <div class="container">
+        <div class="site-footer__section-inner">
+            <div class="site-footer__section-left">
+                <div class="site-logo">
+                    <a href="{{@site.url}}">
+                        <img class="logo-image" src="{{asset "images/logo-white.png"}}" alt="{{@site.title}}">
+                    </a>
+                    <div class="site-logo-text">
+                        {{t "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"}}
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__section-right">
+                <div class="menu-footer">
+                    {{#if @site.navigation}}
+                        {{navigation type="secondary"}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-footer__section-bottom ">
+        <div class="container">
+            <div class="site-footer__section-left text-left">
+                    <ul class="social-list social-list--sm list-horizontal">
+                        {{#if @site.facebook}}
+                        <li>
+                            <a class="social-item social-item-facebook"
+                                href="{{facebook_url @site.facebook}}" target="_blank"
+                                rel="noopener noreferrer" aria-label="Facebook">
+                                {{> icons/facebook}}
+                            </a>
+                            </li>
+                        {{/if}}
+
+                        {{#if @site.twitter}}
+                            <li>
+                            <a class="social-item social-item-twitter"
+                                href="{{twitter_url @site.twitter}}" target="_blank"
+                                rel="noopener noreferrer" aria-label="Twitter">
+                                {{> icons/twitter}}
+                            </a>
+                            </li>
+                        {{/if}}               
+                    </ul>
+            </div>
+            <div class="site-footer__section-right text-right">
+                <p>Santoni © 2021. {{t "Made with by" }}<a href="https://themeforest.net/user/bkninja">bkninja</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+{{> sticky-header }}
+
+{{> navigation-offcanvas }}

@@ -1,0 +1,35 @@
+{{#is "post"}}
+
+    <div class="posts-navigation single-entry-section santoni-single-entry clearfix">
+        {{#prev_post}}
+        <div class="posts-navigation__prev">
+            <article class="post">
+                <div class="post__text">
+                    <a href="{{url}}">
+                        <img src="{{asset "images/light-prev-arrow.png"}}" />
+                        <span>{{t "Previous Article"}}</span>
+                    </a>
+                    <div class="post__text-wrap clearfix">
+                        <h3 class="post__title"><a href="{{url}}">{{title}}</a></h3>
+                    </div>
+                </div>
+            </article>
+        </div>
+        {{/prev_post}}
+        {{#next_post}}
+        <div class="posts-navigation__next">
+            <article class="post">
+                <div class="post__text">
+                    <a href="{{url}}">
+                        <span>{{t "Next Article"}}</span>
+                        <img src="{{asset "images/light-next-arrow.png"}}" />
+                    </a>
+                    <div class="post__text-wrap clearfix">
+                        <h3 class="post__title"><a href="{{url}}">{{title}}</a></h3>
+                    </div>
+                </div>
+            </article>
+        </div>
+        {{/next_post}}
+    </div>
+{{/is}}

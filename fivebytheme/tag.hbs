@@ -1,0 +1,113 @@
+{{!< default}}
+<div class="mnmd-block mnmd-block--fullwidth page-category">
+    <div class="container">
+        <div class="row" style="transform: none;">
+            <div class="mnmd-main-col " role="main">
+                <div class="mnmd-posts-lists">
+                    <div class="posts-lists__inner">
+                        {{#tag}}
+                        <div class="block-heading">
+                             <h4 class="block-heading__title">{{name}}</h4>
+                             <p class="sub-heading__title">{{description}} </p>
+                        </div>
+                        {{/tag}}
+                        <div class="row posts-list list-space-xxl post-feed">
+                            {{#foreach posts}}
+                            {{#has number = "1"}}
+                            <!-- big post vertrical -->
+                            <div class="list-item col-xs-12 big-post-vertrical feed">
+                                <article class="post post--vertical post-santoni">
+                                    {{#if feature_image}}
+                                    <div class="post__thumb">
+                                        <div class="background-img" style="background-image: url({{img_url feature_image size="m"}});"></div>
+                                        {{#primary_tag}}
+                                        <a class="post__cat cat-theme overlay-item--top-right" href="{{url}}">{{name}}</a>
+                                        {{/primary_tag}}
+                                        <a class="link-overlay" href="{{url}}"></a>
+                                    </div>
+                                    {{/if}}
+
+                                    <div class="post__text">
+                                        <!--  post-text-middle    -->
+                                        {{#primary_author}}
+                                        <div class="author__avatar hidden-xs">
+                                            <div class="avatar-img">
+                                                <div class="background-img" style="background: url({{img_url profile_image size="xs"}});"></div>
+                                            </div>
+                                            <div class="author__text text-center">
+                                                <h3 class="author-name">{{name}}</h3>
+                                            </div>
+                                            <a class="link-overlay" href="{{url}}"></a>
+                                        </div>
+                                        {{/primary_author}}
+
+                                        <div class="post__text-wrap">
+                                            <h3 class="post__title">
+                                                <a href="{{url}}">{{title}}</a>
+                                            </h3>
+                                            <div class="post__meta">
+                                                <time class="time published" datetime="{{date published_at}}" title="{{date published_at}}">{{date published_at}}</time>
+                                            </div>
+                                            <div class="post__excerpt hidden-xs">
+                                                {{excerpt words="20"}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            {{else}}
+                            {{#has number = "2"}}
+                            <!-- small post vertrical -->
+                            <div class="list-item col-xs-12 list-space-xxl row feed">
+                            {{/has}}
+                                <div class="list-item col-xs-6 small-post-vertrical">
+                                    <article class="post post--vertical post-santoni height-md">
+                                        {{#if feature_image}}
+                                        <div class="post__thumb">
+                                            <div class="background-img" style="background-image: url({{img_url feature_image size="m"}});"></div>
+                                            <a class="link-overlay" href="{{url}}"></a>
+                                        </div>
+                                        {{/if}}
+                                        <div class="post__text">
+                                            <!--  post-text-middle    -->
+                                            {{#primary_tag}}
+                                            <a class="post__cat" href="{{url}}">{{name}}</a>
+                                            {{/primary_tag}}
+                                            <h3 class="post__title">
+                                                <a href="{{url}}">{{title}}</a>
+                                            </h3>
+                                            <div class="post__excerpt">
+                                                {{excerpt words="15"}}
+                                            </div>
+                                            <div class="post-meta-more clearfix">
+                                                <div class="post__meta post__meta-bottom">
+                                                    {{#primary_author}}
+                                                    <span class="entry-author">{{t "By"}} <a href="{{url}}" class="entry-author__name">{{name}}</a></span>
+                                                    {{/primary_author}}
+                                                    <time class="time published" datetime="{{date published_at}}" title="{{date published_at}}">{{date published_at}}</time>
+                                                </div>
+                                                <div class="post__readmore clearfix">
+                                                    <a href="{{url}}" class="button__readmore"><i class="mdicon mdicon-arrow_forward"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            {{#if @last }}
+                            </div>
+                            {{/if}}
+                            {{/has}}
+                            {{/foreach}}
+                        </div>
+                        <!-- end posts-list -->
+                        {{pagination}}
+                    </div>
+                </div>
+            </div>
+            <div class="mnmd-sub-col mnmd-sub-col--right js-sticky-sidebar" role="complementary">
+                {{> sidebar }}
+            </div>
+        </div>
+    </div>
+</div>
+{{#contentFor "body_class"}}{{#if next}} paged-next{{/if}}{{/contentFor}}

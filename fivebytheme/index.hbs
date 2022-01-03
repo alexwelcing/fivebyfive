@@ -1,0 +1,20 @@
+{{!< default}}
+
+{{> blocks/featured_module}}
+{{> blocks/block_grid_1}}
+{{> blocks/block_grid_2}}
+<div class="mnmd-block mnmd-block--fullwidth">
+    <div class="container">
+        <div class="block-content">
+            <div class="row">
+                <div class="mnmd-main-col" role="main"> 
+                {{> blocks/listing_style_1}}              
+				</div><!-- .mnmd-main-col -->
+                <div class="mnmd-sub-col mnmd-sub-col--right js-sticky-sidebar" role="complementary" >
+                	{{> sidebar }}
+                </div><!-- .mnmd-sub-col -->
+            </div>
+        </div><!-- .container -->
+    </div>
+</div>
+{{#contentFor "body_class"}}{{#if next}} paged-next{{/if}}{{/contentFor}}

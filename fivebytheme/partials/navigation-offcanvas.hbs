@@ -1,0 +1,46 @@
+<div id="mnmd-offcanvas-primary" class="mnmd-offcanvas js-mnmd-offcanvas js-perfect-scrollbar ps-container ps-theme-default" data-ps-id="d2b78dc6-fbe0-cb2f-afc7-c37076405b0b">
+    <div class="mnmd-offcanvas__title">
+        <h2 class="site-logo">
+            <a href="{{@site.url}}">
+                {{#if @site.logo}}
+                    <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
+                {{else}}
+                    <span class="logo-text">{{@site.title}}</span>
+                {{/if}}
+            </a>
+        </h2>
+        <ul class="social-list list-horizontal">
+            {{#if @site.facebook}}
+                <li>
+                <a class="social-item social-item-facebook"
+                    href="{{facebook_url @site.facebook}}" target="_blank"
+                    rel="noopener noreferrer" aria-label="Facebook">
+                    {{> icons/facebook}}
+                </a>
+                </li>
+            {{/if}}
+
+            {{#if @site.twitter}}
+                <li>
+                <a class="social-item social-item-twitter"
+                    href="{{twitter_url @site.twitter}}" target="_blank"
+                    rel="noopener noreferrer" aria-label="Twitter">
+                    {{> icons/twitter}}
+                </a>
+                </li>
+            {{/if}}
+        </ul>
+        <a href="#mnmd-offcanvas-primary" class="mnmd-offcanvas-close js-mnmd-offcanvas-close" aria-label="Close"><span aria-hidden="true">✕</span></a>
+    </div>
+    <div class="mnmd-offcanvas__section mnmd-offcanvas__section-navigation">
+        {{#if @site.navigation}}
+            <div id="offcanvas-menu-mobile" class="menu-main-menu-container">
+                <ul id="menu-main-menu-2" class="navigation navigation--offcanvas">
+                    {{#foreach navigation}}
+                        <li><a class="menu-item menu-item-{{slug}}{{#if current}} menu-item-current{{/if}}" href="{{url absolute="true"}}">{{label}}</a></li>
+                    {{/foreach}}
+                </ul>
+            </div>
+        {{/if}}
+    </div>
+</div>

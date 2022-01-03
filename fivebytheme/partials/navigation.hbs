@@ -1,0 +1,15 @@
+{{#unless isSecondary}}
+    <div id="main-menu" class="menu-main-menu-container">
+        <ul id="menu-main-menu" class="navigation navigation--main navigation--inline">
+            {{#foreach navigation}}
+                <li><a class="menu-item menu-item-{{slug}}{{#if current}} menu-item-current{{/if}}" href="{{url absolute="true"}}">{{label}}</a></li>
+            {{/foreach}}
+        </ul>
+    </div>
+{{else}}
+    <ul id="menu-footer-menu" class="navigation navigation--footer navigation--inline">
+        {{#foreach navigation}}
+            <li><a class="menu-item menu-item-{{slug}}{{#if current}} menu-item-current{{/if}}" href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+{{/unless}}

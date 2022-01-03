@@ -1,0 +1,169 @@
+@import "misc/kg.css";
+@import "vendors/bootstrap.css";
+@import "vendors/owl-carousel.css";
+@import "vendors/flickity.css";
+@import "vendors/fotorama.css";
+@import "vendors/magnific.css";
+@import "vendors/perfect-scrollbar.css";
+@import "global.css";
+
+@import "style.css";
+
+
+.form-wrapper {
+    position: relative;
+}
+
+.form-button {
+    background: #333;
+    margin-top: 30px;
+    border: 0 !important;
+    outline: none !important;
+}
+.form-button:focus {
+    border: 0 !important;
+    outline: none !important;
+}
+.form-button.with-icon {
+    padding: 0;
+    width: 40px;
+    border-radius: 0 4px 4px 0;
+}
+
+.form-wrapper .loader,
+.form-wrapper .success {
+    display: none;
+}
+
+.form-wrapper .loader .icon {
+    width: 28px;
+    height: 28px;
+}
+
+.form-wrapper.loading .default,
+.form-wrapper.success .default,
+.form-wrapper.success .loader {
+    display: none;
+}
+
+.form-wrapper.loading .loader {
+    display: block;
+}
+
+.form-wrapper.success .success {
+    display: flex;
+    align-items: center;
+}
+input.auth-email {
+    border: 0 !important;
+    outline: none !important;
+}
+
+/** Pagination **/
+.pagination,
+body:not(.paged-next) .infinite-scroll-button {
+    display: none;
+}
+
+.infinite-scroll-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.infinite-scroll-button {
+    background: #222;
+    padding: 10px 50px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.infinite-scroll-button .label {
+    font-weight: 400;
+}
+.infinite-scroll-button .loader {
+    display: none;
+    line-height: 0;
+}
+
+.infinite-scroll-button.loading .label {
+    display: none;
+}
+
+.infinite-scroll-button.loading .loader {
+    display: inline;
+}
+.infinite-scroll-button.loading .loader svg {
+    width: 25px;
+}
+.infinite-scroll-button.loading .loader svg path {
+    fill: #fff !important;
+    opacity: 0.4;
+}
+/* 9. Error Template
+/* ---------------------------------------------------------- */
+
+.error-content {
+    padding: 14vw 4vw 6vw;
+}
+
+.error-message {
+    padding-bottom: 10vw;
+    text-align: center;
+}
+
+.error-code {
+    margin: 0;
+    color: var(--ghost-accent-color);
+    font-size: 12vw;
+    line-height: 1em;
+    letter-spacing: -5px;
+}
+
+.error-description {
+    margin: 0;
+    color: var(--color-midgrey);
+    font-size: 3.2rem;
+    line-height: 1.3em;
+    font-weight: 400;
+}
+
+.error-link {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+@media (min-width: 940px) {
+    .error-content .post-card {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .error-content {
+        padding-top: 24vw;
+    }
+    .error-code {
+        font-size: 11.2rem;
+    }
+    .error-message {
+        padding-bottom: 16vw;
+    }
+    .error-description {
+        margin: 5px 0 0 0;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .error-content {
+        padding-top: 28vw;
+    }
+    .error-message {
+        padding-bottom: 14vw;
+    }
+}

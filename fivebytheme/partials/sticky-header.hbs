@@ -1,0 +1,50 @@
+<div id="mnmd-sticky-header" class="sticky-header js-sticky-header">
+    <!-- Navigation bar -->
+    <nav class="navigation-bar navigation-bar--fullwidth hidden-xs hidden-sm">
+        <div class="container">
+            <div class="navigation-bar__inner">
+                <div class="header-branding navigation-bar__section">
+                    <div class="site-logo header-logo">
+                        <a href="{{@site.url}}">
+                            {{#if @site.logo}}
+                                <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
+                            {{else}}
+                                <span class="logo-text">{{@site.title}}</span>
+                            {{/if}}
+                        </a>
+                    </div>
+                </div>
+                <div class="navigation-wrapper navigation-bar__section js-priority-nav" style="opacity: 1;">
+                    {{#if @site.navigation}}
+                        {{navigation}}
+                    {{/if}}
+                </div>
+                <div class="navigation-bar__section mnmd-header-right">
+                    <ul class="social-list social-list--inverse list-horizontal">
+                        {{#if @site.facebook}}
+                            <li>
+                            <a class="social-item social-item-facebook"
+                                href="{{facebook_url @site.facebook}}" target="_blank"
+                                rel="noopener noreferrer" aria-label="Facebook">
+                                {{> icons/facebook}}
+                            </a>
+                            </li>
+                        {{/if}}
+                        {{#if @site.twitter}}
+                            <li>
+                            <a class="social-item social-item-twitter"
+                                href="{{twitter_url @site.twitter}}" target="_blank"
+                                rel="noopener noreferrer" aria-label="Twitter">
+                                {{> icons/twitter}}
+                            </a>
+                            </li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+            <!-- .navigation-bar__inner -->
+        </div>
+        <!-- .container -->
+    </nav>
+    <!-- Navigation bar -->
+</div>
